@@ -50,7 +50,7 @@
 					$conexion->antiInyeccion($this->apellido),
 					$conexion->antiInyeccion($this->correo)
 			);
-			//echo $sql;
+			echo $sql;
 			$resultado = $conexion->ejecutarConsulta($sql);
 		}
 	}
