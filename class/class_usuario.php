@@ -5,9 +5,11 @@
 		private $nombre;
 		private $apellido;
 		private $correo;
-	
-		public function __construct(
-					$nombre,
+		private $genero;
+		private $tipoUsuario;
+		private $accesoFormulario;
+
+		public function __construct($nombre,
 					$apellido,
 					$correo){
 			$this->nombre = $nombre;
@@ -44,12 +46,11 @@
 					"INSERT INTO tbl_usuarios(nombre, apellido, 
 					 correo) 
 					 VALUES (%s,%s,%s)",
-					mysqli_real_escape_string($this->nombre),
-					mysqli_real_escape_string($this->apellido),
-					mysqli_real_escape_string($this->correo)
-				
+					$conexion->antiInyeccion($this->nombre),
+					$conexion->antiInyeccion($this->apellido),
+					$conexion->antiInyeccion($this->correo)
 			);
-			echo $sql;
+			//echo $sql;
 			$resultado = $conexion->ejecutarConsulta($sql);
 		}
 	}

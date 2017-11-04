@@ -66,7 +66,7 @@
                  </td>
                 </tr>
                 <tr class="table-striped">
-                  <td colspan="2"><button type="button" class="btn btn-primary" id="btn-guardar">Guardar</button></td>
+                  <td colspan="2"><button type="button" class="btn btn-primary" name="btn-guardar" id="btn-guardar">Guardar</button></td>
                 </tr>
               </table>
             </form>
